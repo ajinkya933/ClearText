@@ -50,6 +50,19 @@ If you find this tool useful, consider [becoming a sponsor](https://github.com/s
 ## 📸 Demo
 
 
+## ⚠️ Important Requirements
+
+### Image Dimensions
+- 🖼️ Minimum required dimensions:
+  ```
+  Width:  1280 pixels
+  Height: 960 pixels
+  ```
+- ❌ Images smaller than these dimensions may produce poor results
+- ✅ Larger images will be automatically resized while maintaining aspect ratio
+- 💡 For best results, use high-resolution images (2000x1500 or larger)
+
+
 Here's an example of what ClearText can do:
 
 <table>
@@ -64,6 +77,7 @@ Here's an example of what ClearText can do:
   </tr>
 
 </table>
+
 
 
 # 📋 Usage
