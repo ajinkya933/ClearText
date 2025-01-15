@@ -14,6 +14,8 @@ If you find this tool useful, consider [becoming a sponsor](https://github.com/s
 - 🖨️ Improving Scanned Documents
 - 📑 Text Enhancement in Images
 
+# Demo
+[![ClearText Demo](https://img.youtube.com/vi/hS363wB1pmU/0.jpg)](https://www.youtube.com/watch?v=hS363wB1pmU)
 # Setup
 
 ## Prerequisites 📋
