@@ -16,6 +16,22 @@ If you find this tool useful, consider [becoming a sponsor](https://github.com/s
 
 # Demo
 [![ClearText Demo](https://img.youtube.com/vi/hS363wB1pmU/0.jpg)](https://www.youtube.com/watch?v=hS363wB1pmU)
+
+
+
+## ⚠️ Important Requirements
+
+### Image Dimensions
+- 🖼️ Minimum required dimensions:
+  ```
+  Width:  1280 pixels
+  Height: 960 pixels
+  ```
+- ❌ Images smaller than these dimensions may produce poor results
+- ✅ Larger images will be automatically resized while maintaining aspect ratio
+- 💡 For best results, use high-resolution images (2000x1500 or larger)
+- 
+
 # Setup
 
 ## Prerequisites 📋
@@ -48,19 +64,6 @@ If you find this tool useful, consider [becoming a sponsor](https://github.com/s
    ```
 4. This runs the streamlit app on port 8501. Open your browser and go to http://localhost:8501 to use the app.
 ## 📸 Demo
-
-
-## ⚠️ Important Requirements
-
-### Image Dimensions
-- 🖼️ Minimum required dimensions:
-  ```
-  Width:  1280 pixels
-  Height: 960 pixels
-  ```
-- ❌ Images smaller than these dimensions may produce poor results
-- ✅ Larger images will be automatically resized while maintaining aspect ratio
-- 💡 For best results, use high-resolution images (2000x1500 or larger)
 
 
 Here's an example of what ClearText can do:
