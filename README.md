@@ -30,7 +30,6 @@ If you find this tool useful, consider [becoming a sponsor](https://github.com/s
 - ❌ Images smaller than these dimensions may produce poor results
 - ✅ Larger images will be automatically resized while maintaining aspect ratio
 - 💡 For best results, use high-resolution images (2000x1500 or larger)
-- 
 
 # Setup
 
