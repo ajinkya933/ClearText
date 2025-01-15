@@ -75,7 +75,12 @@ Here's an example of what ClearText can do:
   <tr>
     <td><img src="data/boston_cooking_a.jpg" alt="Input Image" width="400"/></td>
     <td><img src="outputs/res_out.jpg" alt="Output Image" width="400"/></td>
-    
+    IMG_0274.JPG
+  </tr>
+  <tr>
+    <td><img src="data/IMG_0274.JPG" alt="Input Image" width="400"/></td>
+    <td><img src="outputs/processed_image.jpg" alt="Output Image" width="400"/></td>
+    IMG_0274.JPG
   </tr>
 
 </table>
