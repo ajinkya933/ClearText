@@ -13,7 +13,7 @@ from io import BytesIO
 # Initialize ONNX session
 @st.cache_resource
 def load_model():
-    return rt.InferenceSession("onnx/craft-bills.onnx")
+    return rt.InferenceSession("weights/model.onnx")
 
 def process_image(img_array, use_blur=True):
     sess = load_model()
