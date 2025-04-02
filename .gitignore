@@ -1,0 +1,2 @@
+# Ignore the ONNX model file
+weights/model.onnx
