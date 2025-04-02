@@ -51,7 +51,7 @@ def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=
         # Get expanded coordinates with padding
         x1 = max(0, min(x_coords) )
         y1 = max(0, min(y_coords) - 15 )
-        x2 = min(img.shape[1], max(x_coords))
+        x2 = min(img.shape[1], max(x_coords) + 40)
         y2 = min(img.shape[0], max(y_coords) + 30)
         
         # Apply the original transformations
