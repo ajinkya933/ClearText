@@ -14,6 +14,23 @@ If you find this tool useful, consider [becoming a sponsor](https://github.com/s
 - 🖨️ Improving Scanned Documents
 - 📑 Text Enhancement in Images
 
+# Demo
+[![ClearText Demo](https://img.youtube.com/vi/hS363wB1pmU/0.jpg)](https://www.youtube.com/watch?v=hS363wB1pmU)
+
+
+
+## ⚠️ Important Requirements
+
+### Image Dimensions
+- 🖼️ Minimum required dimensions:
+  ```
+  Width:  1280 pixels
+  Height: 960 pixels
+  ```
+- ❌ Images smaller than these dimensions may produce poor results
+- ✅ Larger images will be automatically resized while maintaining aspect ratio
+- 💡 For best results, use high-resolution images (2000x1500 or larger)
+
 # Setup
 
 ## Prerequisites 📋
@@ -58,10 +75,16 @@ Here's an example of what ClearText can do:
   <tr>
     <td><img src="data/boston_cooking_a.jpg" alt="Input Image" width="400"/></td>
     <td><img src="outputs/res_out.jpg" alt="Output Image" width="400"/></td>
-    
+    IMG_0274.JPG
+  </tr>
+  <tr>
+    <td><img src="data/IMG_0274.JPG" alt="Input Image" width="400"/></td>
+    <td><img src="outputs/processed_image.jpg" alt="Output Image" width="400"/></td>
+    IMG_0274.JPG
   </tr>
 
 </table>
+
 
 
 # 📋 Usage
