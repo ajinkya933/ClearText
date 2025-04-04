@@ -15,7 +15,7 @@ from io import BytesIO
 def load_model():
     return rt.InferenceSession("weights/model.onnx")
 
-def process_image(img_array, use_blur=True, left_offset=10, right_offset=40, dark_mode=False):
+def process_image(img_array, use_blur=True, left_offset=0, right_offset=0, dark_mode=False):
     sess = load_model()
     input_name = sess.get_inputs()[0].name
     
@@ -98,18 +98,41 @@ def main():
         theme_mode = st.radio(
             "Output Theme",
             ["Light Mode", "Dark Mode"],
-            help="Light Mode: White background with black text\nDark Mode: Dark background with cyan text"
+            help="Light Mode: White background with black text\nDark Mode: Dark background with light gray text"
         )
         
         st.divider()  # Add a visual separator
         
-        # Padding controls
+        # Padding controls with visual explanation
         st.info("Adjust padding around detected text regions")
+        
+        # Add padding explanation diagram
+        padding_explanation = """
+        ```
+        ┌───────────────────────────────┐
+        │                               │
+        │   ◄─── Left    Right ───►     │
+        │   Padding     Padding         │
+        │     ┌─────────────┐           │
+        │     │   Sample    │           │
+        │     │    Text     │           │
+        │     └─────────────┘           │
+        │                               │
+        └───────────────────────────────┘
+        
+        • Left Padding: Increase this value if words/letters are not detected on the left hand side
+        • Right Padding: Increase this value if words/letters are not detected on the right hand side
+        """
+        st.code(padding_explanation, language=None)
+        
+        # Padding sliders in columns
         col1, col2 = st.columns(2)
         with col1:
-            left_offset = st.slider("Left Padding", 0, 80, 10, help="Padding pixels on the left side of detected text")
+            left_offset = st.slider("Left Padding", 0, 80, 0, 
+                                  help="Adds extra space to the left of detected text (in pixels)")
         with col2:
-            right_offset = st.slider("Right Padding", 0, 80, 40, help="Padding pixels on the right side of detected text")
+            right_offset = st.slider("Right Padding", 0, 80, 0, 
+                                   help="Adds extra space to the right of detected text (in pixels)")
     
     # File uploader
     uploaded_file = st.file_uploader("Choose an image...", type=['jpg', 'jpeg', 'png'])

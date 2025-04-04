@@ -31,7 +31,7 @@ def list_files(in_path):
     return img_files, mask_files, gt_files
 
 def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=None, use_blur=True, 
-              left_offset=10, right_offset=40, dark_mode=False):
+              left_offset=0, right_offset=0, dark_mode=False):
     img = np.array(img)
     filename, file_ext = os.path.splitext(os.path.basename(img_file))
     res_img_file = dirname + "res_out" + filename + '.jpg'
