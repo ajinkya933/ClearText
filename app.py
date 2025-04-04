@@ -15,7 +15,7 @@ from io import BytesIO
 def load_model():
     return rt.InferenceSession("weights/model.onnx")
 
-def process_image(img_array, use_blur=True):
+def process_image(img_array, use_blur=True, left_offset=10, right_offset=40):
     sess = load_model()
     input_name = sess.get_inputs()[0].name
     
@@ -63,7 +63,8 @@ def process_image(img_array, use_blur=True):
         os.makedirs(output_dir)
     
     # Save and return processed image with blur parameter
-    file_utils.saveResult('outputs/', img_array[:,:,::-1], boxes, dirname=output_dir, use_blur=use_blur)
+    file_utils.saveResult('outputs/', img_array[:,:,::-1], boxes, dirname=output_dir, use_blur=use_blur, 
+                         left_offset=left_offset, right_offset=right_offset)
     
     # Read the processed image with error checking
     result_path = os.path.join(output_dir, 'res_out.jpg')
@@ -89,6 +90,15 @@ def main():
         help="Normal mode applies blur for smoother text. Sharp mode preserves original text edges."
     )
     
+    # Create expandable advanced settings section
+    with st.expander("Advanced Settings"):
+        st.info("Adjust padding around detected text regions")
+        col1, col2 = st.columns(2)
+        with col1:
+            left_offset = st.slider("Left Padding", 0, 80, 10, help="Padding pixels on the left side of detected text")
+        with col2:
+            right_offset = st.slider("Right Padding", 0, 80, 40, help="Padding pixels on the right side of detected text")
+    
     # File uploader
     uploaded_file = st.file_uploader("Choose an image...", type=['jpg', 'jpeg', 'png'])
     
@@ -105,7 +115,7 @@ def main():
                 
                 # Process the image with selected option
                 use_blur = processing_option == "Normal"
-                result_image = process_image(img_array, use_blur)
+                result_image = process_image(img_array, use_blur, left_offset, right_offset)
                 
                 # Only show result if processing was successful
                 if result_image is not None:

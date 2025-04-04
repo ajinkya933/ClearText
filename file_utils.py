@@ -30,7 +30,7 @@ def list_files(in_path):
     # gt_files.sort()
     return img_files, mask_files, gt_files
 
-def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=None, use_blur=True):
+def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=None, use_blur=True, left_offset=10, right_offset=40):
     img = np.array(img)
     filename, file_ext = os.path.splitext(os.path.basename(img_file))
     res_img_file = dirname + "res_out" + filename + '.jpg'
@@ -49,9 +49,9 @@ def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=
         y_coords = poly[:, 1]
         
         # Get expanded coordinates with padding
-        x1 = max(0, min(x_coords) )
+        x1 = max(0, min(x_coords) - left_offset)
         y1 = max(0, min(y_coords) - 15 )
-        x2 = min(img.shape[1], max(x_coords) + 40)
+        x2 = min(img.shape[1], max(x_coords) + right_offset) #40
         y2 = min(img.shape[0], max(y_coords) + 30)
         
         # Apply the original transformations
