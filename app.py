@@ -15,7 +15,7 @@ from io import BytesIO
 def load_model():
     return rt.InferenceSession("weights/model.onnx")
 
-def process_image(img_array, use_blur=True, left_offset=10, right_offset=40):
+def process_image(img_array, use_blur=True, left_offset=10, right_offset=40, dark_mode=False):
     sess = load_model()
     input_name = sess.get_inputs()[0].name
     
@@ -64,7 +64,7 @@ def process_image(img_array, use_blur=True, left_offset=10, right_offset=40):
     
     # Save and return processed image with blur parameter
     file_utils.saveResult('outputs/', img_array[:,:,::-1], boxes, dirname=output_dir, use_blur=use_blur, 
-                         left_offset=left_offset, right_offset=right_offset)
+                         left_offset=left_offset, right_offset=right_offset, dark_mode=dark_mode)
     
     # Read the processed image with error checking
     result_path = os.path.join(output_dir, 'res_out.jpg')
@@ -92,6 +92,18 @@ def main():
     
     # Create expandable advanced settings section
     with st.expander("Advanced Settings"):
+        st.info("Adjust text appearance and padding")
+        
+        # Add theme selector
+        theme_mode = st.radio(
+            "Output Theme",
+            ["Light Mode", "Dark Mode"],
+            help="Light Mode: White background with black text\nDark Mode: Dark background with cyan text"
+        )
+        
+        st.divider()  # Add a visual separator
+        
+        # Padding controls
         st.info("Adjust padding around detected text regions")
         col1, col2 = st.columns(2)
         with col1:
@@ -115,7 +127,8 @@ def main():
                 
                 # Process the image with selected option
                 use_blur = processing_option == "Normal"
-                result_image = process_image(img_array, use_blur, left_offset, right_offset)
+                dark_mode = theme_mode == "Dark Mode"
+                result_image = process_image(img_array, use_blur, left_offset, right_offset, dark_mode)
                 
                 # Only show result if processing was successful
                 if result_image is not None:
