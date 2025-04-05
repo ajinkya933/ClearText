@@ -1,3 +1,89 @@
+# ClearText OCR Desktop Application
+
+This repository contains a desktop application version of ClearText OCR, allowing users to run the OCR functionality without requiring Docker or technical knowledge.
+
+## Installation and Usage Options
+
+### Option 1: Development Mode (Quick Start)
+
+For development or personal use, this is the easiest way to run the application:
+
+1. Clone or download this repository
+2. Run `setup_dev.bat` to set up the development environment
+3. Run `run_dev.bat` to start the application
+
+This will open the application in a desktop window, providing the full functionality without packaging.
+
+### Option 2: Distributable Installer
+
+To create a packaged installer that you can distribute to others:
+
+1. Clone or download this repository
+2. Run `create_icon.bat` to generate an application icon (optional)
+3. Run `build_app.bat` to build the application
+
+This will:
+- Create an installer in the `dist` folder
+- Generate a portable version that doesn't require installation
+- Create a shortcut in the current directory for easy access
+
+The installer allows users to install the application like any standard Windows program, with desktop and start menu shortcuts.
+
+## Build Options
+
+### Different Types of Builds
+
+The following build options are available:
+
+- **Development Mode**: Run the application directly without packaging
+  - Setup: `setup_dev.bat`
+  - Run: `run_dev.bat`
+
+- **Installer**: Build an NSIS installer (.exe)
+  - Creates a standard Windows installer
+  - Generated at `dist/ClearText OCR-1.0.0.exe`
+
+- **Portable**: Build a portable version (.exe)
+  - Doesn't require installation
+  - Generated at `dist/ClearText OCR-Portable-1.0.0.exe`
+
+### Manual Build Commands
+
+For advanced users, you can run these npm commands directly:
+
+```
+npm start             # Run in development mode
+npm run build         # Build with default settings
+npm run build-nosign  # Build without signing (for systems without admin privileges)
+```
+
+## Troubleshooting
+
+If you encounter any issues:
+
+1. **Application doesn't start**:
+   - Make sure Python and all dependencies are installed
+   - Check the logs in the console window
+
+2. **Build errors**:
+   - Try running as Administrator
+   - Use the `build-nosign` option to bypass code signing
+
+3. **Module errors**:
+   - The application automatically creates missing modules
+   - Check if antivirus is blocking file creation
+
+## Directory Structure
+
+- `app.py` - Main Python application
+- `main.js` - Electron entry point
+- `setup.py` - Dependency setup script
+- `windows_install.bat` - Python dependencies installer
+- `setup_dev.bat` - Development environment setup
+- `run_dev.bat` - Run in development mode
+- `build_app.bat` - Build distributable versions
+- `create_icon.bat` - Generate application icon
+
 # ClearText
 
 ## What is ClearText? 🤔
@@ -115,21 +201,24 @@ Your sponsorship helps maintain and improve ClearText, ensuring it remains a rob
 
 
 ## 📜 Licensing
-- This project's core text detection is based on CRAFT (MIT License)
-- Additional features and enhancements are available under dual licensing:
-  
-### Free License
-- Non-commercial use
-- Personal projects
-- Academic research
-- All original CRAFT features
 
-### Commercial License
-For business/commercial use of ClearText's enhanced features:
+This project consists of two parts with different licensing terms:
+
+### Core Components (MIT License)
+- The core text detection functionality based on CRAFT
+- Basic image processing features
+- Available under the MIT License
+
+### Enhanced Features (Commercial License)
+The following features require a commercial license for business/commercial use:
 - Production-ready ONNX implementation
 - Custom image enhancement pipeline
-- Docker deployment
+- Docker deployment configuration
 - Enterprise support
+- Advanced UI features
 
-👉 [Contact for Commercial Licensing](mailto:ajinkyabobade93@gmail.com)
+For commercial licensing inquiries:
+👉 [Contact for Commercial License](mailto:ajinkyabobade93@gmail.com)
+
+Note: Personal, academic, and non-commercial use of all features is permitted under the MIT License.
 

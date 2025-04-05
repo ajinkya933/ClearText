@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Error - ClearText OCR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+        }
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .error-icon {
+            font-size: 50px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        .error-details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-icon">❌</div>
+        <h1>Unable to Start ClearText OCR</h1>
+        <p>The application could not be started. This could be due to missing files or configuration issues.</p>
+        
+        <div class="error-details">
+            <p><strong>Possible solutions:</strong></p>
+            <ul>
+                <li>Make sure Python is installed and in your PATH</li>
+                <li>Ensure that the app.py file exists</li>
+                <li>Check that all dependencies are installed</li>
+                <li>Restart the application</li>
+                <li>Try reinstalling the application</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 

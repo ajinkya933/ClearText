@@ -1,0 +1,58 @@
+{
+  "name": "cleartext-desktop",
+  "version": "1.0.0",
+  "description": "ClearText OCR Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64 --publish never",
+    "build-nosign": "electron-builder --win --x64 --publish never --config.win.signAndEditExecutable=false --config.win.verifyUpdateCodeSignature=false",
+    "build-portable": "electron-builder --win --x64 --publish never --portable --config.win.signAndEditExecutable=false --config.win.verifyUpdateCodeSignature=false"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.cleartext.app",
+    "productName": "ClearText OCR",
+    "win": {
+      "target": ["portable"],
+      "signAndEditExecutable": false,
+      "verifyUpdateCodeSignature": false,
+      "artifactName": "${productName}-${version}.${ext}"
+    },
+    "files": [
+      "main.js",
+      "loading.html",
+      "error.html",
+      "setup.py",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "app.py",
+        "to": "app.py"
+      },
+      {
+        "from": "requirements.txt",
+        "to": "requirements.txt"
+      },
+      {
+        "from": "venv",
+        "to": "venv",
+        "filter": ["**/*"]
+      }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "asar": false,
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}.${ext}",
+      "requestExecutionLevel": "asInvoker"
+    }
+  }
+} 
