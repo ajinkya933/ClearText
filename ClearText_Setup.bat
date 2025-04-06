@@ -56,6 +56,36 @@ REM Install Node.js dependencies
 echo Installing Node.js dependencies...
 call npm install
 
+if %ERRORLEVEL% NEQ 0 (
+  echo.
+  echo First npm install attempt failed, retrying with alternative method...
+  echo.
+  timeout /t 2 /nobreak >nul
+  
+  REM Try with --no-optional flag to skip optional dependencies
+  call npm install --no-optional
+  
+  if %ERRORLEVEL% NEQ 0 (
+    echo.
+    echo ================================================
+    echo      ERROR: npm install failed
+    echo ================================================
+    echo.
+    echo Suggestions to fix this issue:
+    echo 1. Make sure you have a stable internet connection
+    echo 2. Try running this script as Administrator
+    echo 3. Manually run: npm cache clean --force
+    echo    Then run this script again
+    echo.
+    echo Press any key to continue anyway (not recommended)...
+    pause >nul
+  ) else (
+    echo npm install completed successfully with alternative method.
+  )
+) else (
+  echo npm install completed successfully.
+)
+
 echo.
 echo ================================================
 echo      Setup Complete!
