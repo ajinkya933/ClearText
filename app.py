@@ -64,7 +64,7 @@ def process_image(img_array, use_blur=True, left_offset=0, right_offset=0, dark_
     
     # Save and return processed image with blur parameter
     file_utils.saveResult('outputs/', img_array[:,:,::-1], boxes, dirname=output_dir, use_blur=use_blur, 
-                         left_offset=left_offset, right_offset=right_offset, dark_mode=dark_mode)
+                         total_left_offset=left_offset, total_right_offset=right_offset, dark_mode=dark_mode)
     
     # Read the processed image with error checking
     result_path = os.path.join(output_dir, 'res_out.jpg')
@@ -130,9 +130,19 @@ def main():
         with col1:
             left_offset = st.slider("Left Padding", 0, 80, 0, 
                                   help="Adds extra space to the left of detected text (in pixels)")
+            left_offset_manual = st.number_input("Manual Left Padding", 0, 1000, 0,
+                                               help="Enter a custom value for left padding (0-1000 pixels)")
         with col2:
             right_offset = st.slider("Right Padding", 0, 80, 0, 
                                    help="Adds extra space to the right of detected text (in pixels)")
+            right_offset_manual = st.number_input("Manual Right Padding", 0, 1000, 0,
+                                                help="Enter a custom value for right padding (0-1000 pixels)")
+        
+        # Combine slider and manual values
+        total_left_offset = left_offset + left_offset_manual
+        total_right_offset = right_offset + right_offset_manual
+        
+        st.info(f"Total Left Padding: {total_left_offset}px | Total Right Padding: {total_right_offset}px")
     
     # File uploader
     uploaded_file = st.file_uploader("Choose an image...", type=['jpg', 'jpeg', 'png'])
@@ -151,7 +161,7 @@ def main():
                 # Process the image with selected option
                 use_blur = processing_option == "Normal"
                 dark_mode = theme_mode == "Dark Mode"
-                result_image = process_image(img_array, use_blur, left_offset, right_offset, dark_mode)
+                result_image = process_image(img_array, use_blur, total_left_offset, total_right_offset, dark_mode)
                 
                 # Only show result if processing was successful
                 if result_image is not None:
