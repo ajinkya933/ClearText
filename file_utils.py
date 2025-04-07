@@ -31,7 +31,7 @@ def list_files(in_path):
     return img_files, mask_files, gt_files
 
 def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=None, use_blur=True, 
-              left_offset=0, right_offset=0, dark_mode=False):
+              total_left_offset=0, total_right_offset=0, dark_mode=False):
     img = np.array(img)
     filename, file_ext = os.path.splitext(os.path.basename(img_file))
     res_img_file = dirname + "res_out" + filename + '.jpg'
@@ -54,9 +54,9 @@ def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=
         x_coords = poly[:, 0]
         y_coords = poly[:, 1]
         
-        x1 = max(0, min(x_coords) - left_offset)
+        x1 = max(0, min(x_coords) - total_left_offset)
         y1 = max(0, min(y_coords) - 15)
-        x2 = min(img.shape[1], max(x_coords) + right_offset)
+        x2 = min(img.shape[1], max(x_coords) + total_right_offset)
         y2 = min(img.shape[0], max(y_coords) + 30)
         
         cropped_segment = img[y1:y2, x1:x2]
