@@ -1,2 +1,5 @@
 # Model weights
 weights/model.onnx
+venv/
+__pycache__/
+node_modules/

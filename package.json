@@ -1,0 +1,26 @@
+{
+  "name": "clear-text-electron",
+  "version": "1.0.0",
+  "description": "Electron wrapper for ClearText Streamlit app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3"
+  },
+  "build": {
+    "appId": "com.cleartext.app",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  }
+} 
