@@ -115,19 +115,26 @@ Your sponsorship helps maintain and improve ClearText, ensuring it remains a rob
 
 
 ## 📜 Licensing
-- This project's core text detection is based on CRAFT (MIT License)
-- Additional features and enhancements are available under dual licensing:
-  
-### Free License
-- Non-commercial use
+This project uses a dual licensing model:
+
+### Original CRAFT Components
+- Licensed under MIT License (see LICENSE file)
+- Covers the core text detection functionality
+
+### ClearText Additional Features
+- Licensed under ClearText License (see CLEARTEXT_LICENSE file)
+- Covers all enhancements and additional features
+- Available under two options:
+
+#### Free License
+- Non-commercial use only
 - Personal projects
 - Academic research
-- All original CRAFT features
 
-### Commercial License
+#### Commercial License
 For business/commercial use of ClearText's enhanced features:
 - Production-ready ONNX implementation
-- Custom image enhancement pipeline
+- Custom image enhancement
 - Docker deployment
 - Enterprise support
 
