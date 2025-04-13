@@ -5,7 +5,7 @@ This is an Electron wrapper for the ClearText Streamlit application.
 ## Prerequisites
 
 - Node.js (v14 or higher)
-- Python 3.9
+- Python 3.12
 - All Python dependencies from requirements.txt
 
 ## Installation
@@ -26,11 +26,8 @@ python.exe -m pip install --upgrade pip
 pip install torch==2.2.2+cpu torchvision==0.17.2+cpu --index-url https://download.pytorch.org/whl/cpu
 pip install --no-cache-dir -r requirements.txt
 pip install --no-deps craft-text-detector==0.4.3
-pip install opencv-python==4.5.4.60
 pip install gdown==5.2.0
-pip install numpy     
-pip install opencv-python
-# pip install -r windows-venv-requirements.txt
+pip install opencv-python==4.11.0.86
 ```
 
 ## Running the App
