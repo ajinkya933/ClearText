@@ -5,22 +5,55 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder"
+    "prepare-python": "node scripts/prepare-python.js",
+    "build": "npm run prepare-python && electron-builder"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^28.1.0",
-    "electron-builder": "^24.9.1"
-  },
-  "dependencies": {
-    "cross-spawn": "^7.0.3"
+    "electron-builder": "^24.9.1",
+    "extract-zip": "^2.0.1"
   },
   "build": {
     "appId": "com.cleartext.app",
     "win": {
       "target": "nsis",
       "icon": "icon.ico"
-    }
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*",
+      "!python-embedded/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "python-embedded",
+        "to": "python",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "dlls",
+        "to": "dlls",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "weights",
+        "to": "weights",
+        "filter": ["**/*"]
+      },
+      {
+        "from": ".",
+        "to": ".",
+        "filter": [
+          "app.py",
+          "requirements.txt",
+          "craft_utils.py",
+          "imgproc.py",
+          "file_utils.py"
+        ]
+      }
+    ],
+    "asar": true
   }
-} 
+}

@@ -5,7 +5,7 @@ This is an Electron wrapper for the ClearText Streamlit application.
 ## Prerequisites
 
 - Node.js (v14 or higher)
-- Python 3.12
+- Python 3.9
 - All Python dependencies from requirements.txt
 
 ## Installation
