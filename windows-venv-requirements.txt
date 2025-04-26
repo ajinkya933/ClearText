@@ -1,7 +1,0 @@
-pip install --upgrade pip
-pip install torch==2.2.2+cpu torchvision==0.17.2+cpu --index-url https://download.pytorch.org/whl/cpu
-pip install --no-cache-dir -r requirements.txt
-pip install --no-deps craft-text-detector==0.4.3
-pip install gdown==5.2.0
-pip install opencv-python=4.11.0.86
-

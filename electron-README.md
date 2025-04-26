@@ -5,29 +5,14 @@ This is an Electron wrapper for the ClearText Streamlit application.
 ## Prerequisites
 
 - Node.js (v14 or higher)
-- Python 3.9
-- All Python dependencies from requirements.txt
+- Python embedded distribution (included in the app)
+- All Python dependencies are bundled with the application
 
 ## Installation
 
 1. Install Node.js dependencies:
 ```bash
 npm install
-```
-2. Create venv (windows powershell)
-```
-python -m venv venv
-.\venv\Scripts\activate
-```
-
-3. Make sure all Python dependencies are installed in venv:
-```bash
-python.exe -m pip install --upgrade pip
-pip install torch==2.2.2+cpu torchvision==0.17.2+cpu --index-url https://download.pytorch.org/whl/cpu
-pip install --no-cache-dir -r requirements.txt
-pip install --no-deps craft-text-detector==0.4.3
-pip install gdown==5.2.0
-pip install opencv-python==4.11.0.86
 ```
 
 ## Running the App
@@ -45,6 +30,13 @@ npm run build
 ```
 
 The built application will be available in the `dist` folder.
+
+## Architecture
+
+This application uses a Python embedded distribution approach:
+- Python interpreter and all dependencies are bundled with the application
+- No need to install Python separately or create a virtual environment
+- The application is self-contained and will work on any Windows machine without additional setup
 
 ## Notes
 
