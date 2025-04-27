@@ -1,0 +1,65 @@
+{
+  "name": "clear-text-electron",
+  "version": "1.0.0",
+  "description": "Electron wrapper for ClearText Streamlit app",
+  "main": "main.js",
+  "scripts": {
+    "prepare-python": "node prepare-python.js",
+    "test": "node test-build.js",
+    "start": "electron .",
+    "build": "electron-builder",
+    "setup": "npm install && npm run prepare-python"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3"
+  },
+  "build": {
+    "appId": "com.cleartext.app",
+    "files": [
+      "**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "python-embedded",
+        "to": "python"
+      },
+      {
+        "from": "../weights",
+        "to": "weights"
+      },
+      {
+        "from": "../app.py",
+        "to": "app.py"
+      },
+      {
+        "from": "../imgproc.py",
+        "to": "imgproc.py"
+      },
+      {
+        "from": "../craft_utils.py",
+        "to": "craft_utils.py"
+      },
+      {
+        "from": "../craft.py",
+        "to": "craft.py"
+      },
+      {
+        "from": "../file_utils.py",
+        "to": "file_utils.py"
+      },
+      {
+        "from": "../basenet",
+        "to": "basenet"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+} 
