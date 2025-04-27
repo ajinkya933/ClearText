@@ -3,6 +3,15 @@
 ## What is ClearText? 🤔
 ClearText is an AI-powered text detection and enhancement tool that helps make text in images more readable and clearer. Perfect for improving the legibility of text in scanned documents, photos, and other images.
 
+# Product Demo
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=6j5wLnsx0f0">
+    <img src="https://img.youtube.com/vi/6j5wLnsx0f0/0.jpg" alt="ClearText Demo" width="600">
+    <br>
+    <img src="https://img.shields.io/badge/Watch-Demo-red?style=for-the-badge&logo=youtube" alt="Watch Demo">
+  </a>
+</div>
+
 ## 💎 Support ClearText
 If you find this tool useful, consider [becoming a sponsor](https://github.com/sponsors/ajinkya933) for $1/month and get priority support!
 
@@ -14,7 +23,7 @@ If you find this tool useful, consider [becoming a sponsor](https://github.com/s
 - 🖨️ Improving Scanned Documents
 - 📑 Text Enhancement in Images
 
-# Demo
+# Setup Demo
 [![ClearText Demo](https://img.youtube.com/vi/hS363wB1pmU/0.jpg)](https://www.youtube.com/watch?v=hS363wB1pmU)
 
 
