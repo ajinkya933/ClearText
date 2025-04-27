@@ -30,59 +30,9 @@ cd electron
 
 2. Run the complete setup (installs Node.js dependencies and sets up Python):
 ```bash
-npm run setup
+npm install              # Install Node.js dependencies
+npm run prepare-python   # Set up Python embedded environment
+npm start                # Start the application in development mode
+npm run build            # Build the distributable application
 ```
-
-This setup process will:
-- Install all required Node.js dependencies
-- Download and set up an embedded Python 3.9 environment
-- Install all required Python packages (including OpenCV, Streamlit, etc.)
-- Copy necessary Python modules from the parent directory
-
-## Running the App
-
-To run the app in development mode:
-```bash
-npm start
-```
-
-## Building the App
-
-To build a Windows executable:
-```bash
-npm run build
-```
-
-The built application will be available in the `dist` folder.
-
-## Manual Setup Steps
-
-If you prefer to run each step manually:
-
-1. Install Node.js dependencies:
-```bash
-npm install
-```
-
-2. Set up the Python embedded environment:
-```bash
-npm run prepare-python
-```
-
-3. Validate the build environment:
-```bash
-npm run test
-```
-
-## Architecture
-
-This application uses a Python embedded distribution approach:
-- Python interpreter and all dependencies are bundled with the application
-- No need to install Python separately or create a virtual environment
-- The application is self-contained and will work on any Windows machine without additional setup
-
-## Notes
-
-- The app will automatically start the Streamlit server and open it in an Electron window
-- The Streamlit server runs on port 8501
-- When you close the app, it will automatically shut down the Streamlit server 
+The built application will be available in the dist folder.
