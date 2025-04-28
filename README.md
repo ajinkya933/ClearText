@@ -12,6 +12,9 @@ ClearText is an AI-powered text detection and enhancement tool that helps make t
   </a>
 </div>
 
+## Windows Download:
+Here https://github.com/ajinkya933/ClearText/releases/download/v2.0.0/clear-text-electron.Setup.2.0.0.exe
+
 ## 💎 Support ClearText
 If you find this tool useful, consider [becoming a sponsor](https://github.com/sponsors/ajinkya933) for $1/month and get priority support!
 
