@@ -15,22 +15,6 @@ ClearText is an AI-powered text detection and enhancement tool that helps make t
 ## Windows Download:
 Here https://github.com/ajinkya933/ClearText/releases/download/v2.0.0/clear-text-electron.Setup.2.0.0.exe
 
-## 💎 Support ClearText
-If you find this tool useful, consider [becoming a sponsor](https://github.com/sponsors/ajinkya933) for $1/month and get priority support!
-
-
-## Perfect For 🎯
-- 📄 Document Digitization
-- 📚 Book Scanning
-- 📱 Mobile Photos of Text
-- 🖨️ Improving Scanned Documents
-- 📑 Text Enhancement in Images
-
-# Setup Demo
-[![ClearText Demo](https://img.youtube.com/vi/hS363wB1pmU/0.jpg)](https://www.youtube.com/watch?v=hS363wB1pmU)
-
-
-
 ## ⚠️ Important Requirements
 
 ### Image Dimensions
@@ -42,6 +26,21 @@ If you find this tool useful, consider [becoming a sponsor](https://github.com/s
 - ❌ Images smaller than these dimensions may produce poor results
 - ✅ Larger images will be automatically resized while maintaining aspect ratio
 - 💡 For best results, use high-resolution images (2000x1500 or larger)
+
+
+## 💎 Support ClearText
+If you find this tool useful, consider [becoming a sponsor](https://github.com/sponsors/ajinkya933) for $1/month and get priority support!
+
+
+## Perfect For 🎯
+- 📄 Document Digitization
+- 📚 Book Scanning
+- 📱 Mobile Photos of Text
+- 🖨️ Improving Scanned Documents
+- 📑 Text Enhancement in Images
+
+# Docker Setup Demo
+[![ClearText Demo](https://img.youtube.com/vi/hS363wB1pmU/0.jpg)](https://www.youtube.com/watch?v=hS363wB1pmU)
 
 # Setup
 
