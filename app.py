@@ -81,30 +81,30 @@ def process_image(img_array, use_blur=True, left_offset=0, right_offset=0, dark_
     return result_image
 
 def single_image_demo():
-    st.title("ClearText")
+    st.title("🔆 ClearText")
     
     # Add processing option selector
     processing_option = st.radio(
-        "Select Processing Mode",
-        ["Normal", "Sharp"],
+        "🔄 Select Processing Mode",
+        ["✨ Normal", "🔪 Sharp"],
         help="Normal mode applies blur for smoother text. Sharp mode preserves original text edges."
     )
     
     # Create expandable advanced settings section
-    with st.expander("Advanced Settings"):
+    with st.expander("⚙️ Advanced Settings"):
         st.info("Adjust text appearance and padding")
         
         # Add theme selector
         theme_mode = st.radio(
-            "Output Theme",
-            ["Light Mode", "Dark Mode"],
+            "🎨 Output Theme",
+            ["☀️ Light Mode", "🌙 Dark Mode"],
             help="Light Mode: White background with black text\nDark Mode: Dark background with light gray text"
         )
         
         st.divider()  # Add a visual separator
         
         # Padding controls with visual explanation
-        st.info("Adjust padding around detected text regions")
+        st.info("📏 Adjust padding around detected text regions")
         
         # Add padding explanation diagram
         padding_explanation = """
@@ -145,7 +145,7 @@ def single_image_demo():
         st.info(f"Total Left Padding: {total_left_offset}px | Total Right Padding: {total_right_offset}px")
     
     # File uploader
-    uploaded_file = st.file_uploader("Choose an image...", type=['jpg', 'jpeg', 'png'])
+    uploaded_file = st.file_uploader("📤 Choose an image...", type=['jpg', 'jpeg', 'png'])
     
     if uploaded_file is not None:
         # Display original image
@@ -153,7 +153,7 @@ def single_image_demo():
         st.image(image, caption='Original Image', use_column_width=True)
         
         # Process image when user clicks button
-        if st.button('Process Image'):
+        if st.button('🧹 Process Image'):
             with st.spinner('Processing...'):
                 # Convert PIL Image to numpy array
                 img_array = np.array(image)
@@ -173,31 +173,31 @@ def single_image_demo():
                     buf = BytesIO()
                     result_pil.save(buf, format="JPEG")
                     st.download_button(
-                        label="Download Processed Image",
+                        label="💾 Download Processed Image",
                         data=buf.getvalue(),
                         file_name="processed_image.jpg",
                         mime="image/jpeg"
                     )
 
 def multi_page_processing():
-    st.title("Multi-page Processing")
+    st.title("📚 Multi-page Processing")
     
     # Add processing option selector
     processing_option = st.radio(
-        "Select Processing Mode",
-        ["Normal", "Sharp"],
+        "🔄 Select Processing Mode",
+        ["✨ Normal", "🔪 Sharp"],
         help="Normal mode applies blur for smoother text. Sharp mode preserves original text edges.",
         key="multi_processing_option"
     )
     
     # Create expandable advanced settings section
-    with st.expander("Advanced Settings"):
+    with st.expander("⚙️ Advanced Settings"):
         st.info("Adjust text appearance and padding")
         
         # Add theme selector
         theme_mode = st.radio(
-            "Output Theme",
-            ["Light Mode", "Dark Mode"],
+            "🎨 Output Theme",
+            ["☀️ Light Mode", "🌙 Dark Mode"],
             help="Light Mode: White background with black text\nDark Mode: Dark background with light gray text",
             key="multi_theme_mode"
         )
@@ -205,7 +205,7 @@ def multi_page_processing():
         st.divider()  # Add a visual separator
         
         # Padding controls with visual explanation
-        st.info("Adjust padding around detected text regions")
+        st.info("📏 Adjust padding around detected text regions")
         
         # Padding sliders in columns
         col1, col2 = st.columns(2)
@@ -231,10 +231,10 @@ def multi_page_processing():
         st.info(f"Total Left Padding: {total_left_offset}px | Total Right Padding: {total_right_offset}px")
     
     # Multi-file uploader
-    uploaded_files = st.file_uploader("Choose images...", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
+    uploaded_files = st.file_uploader("📤 Choose images...", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
     
     if uploaded_files:
-        st.write(f"Selected {len(uploaded_files)} images for processing")
+        st.write(f"📋 Selected {len(uploaded_files)} images for processing")
         
         # Show thumbnails of selected images
         thumbnail_cols = st.columns(min(3, len(uploaded_files)))
@@ -247,7 +247,7 @@ def multi_page_processing():
             st.write(f"...and {len(uploaded_files) - 3} more images")
         
         # Process all images when user clicks button
-        if st.button('Process All Images', key="process_multi"):
+        if st.button('🧹 Process All Images', key="process_multi"):
             use_blur = processing_option == "Normal"
             dark_mode = theme_mode == "Dark Mode"
             
@@ -265,7 +265,7 @@ def multi_page_processing():
                 status_text = st.empty()
                 
                 for i, uploaded_file in enumerate(uploaded_files):
-                    status_text.text(f"Processing image {i+1} of {len(uploaded_files)}")
+                    status_text.text(f"🔄 Processing image {i+1} of {len(uploaded_files)}")
                     
                     # Open and process image
                     image = Image.open(uploaded_file)
@@ -291,12 +291,12 @@ def multi_page_processing():
                 zip_file.writestr("README.txt", "Processed with ClearText. Visit https://github.com/ajinkya933/ClearText for more information.")
             
             # Complete
-            status_text.text("Processing complete!")
+            status_text.text("✅ Processing complete!")
             progress_bar.progress(100)
             
             # Offer download
             st.download_button(
-                label="Download All Processed Images (ZIP)",
+                label="📦 Download All Processed Images (ZIP)",
                 data=zip_buffer.getvalue(),
                 file_name="processed_images.zip",
                 mime="application/zip"
@@ -313,18 +313,18 @@ def main():
     
     # Create sidebar
     with st.sidebar:
-        st.title("ClearText")
-        st.markdown("**Remove text from images**")
+        st.title("📝 ClearText")
+        st.markdown("**🔍 Remove text from images**")
         
-        # Create tabs in sidebar
+        # Create tabs in sidebar with emojis
         selected_mode = st.radio(
-            "Select Mode",
-            ["Demo", "Multi-page Processing"],
+            "📋 Select Mode",
+            ["📗 Demo", "📚 Multi-page Processing"],
             index=0
         )
     
     # Display the selected page
-    if selected_mode == "Demo":
+    if selected_mode == "📗 Demo":
         single_image_demo()
     else:
         multi_page_processing()
