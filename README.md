@@ -127,8 +127,8 @@ Your sponsorship helps maintain and improve ClearText, ensuring it remains a rob
 This project uses a dual licensing model:
 
 ### Original CRAFT Components
-- Licensed under MIT License (see LICENSE file)
-- Covers the core text detection functionality
+- Licensed under MIT License (see CRAFT_LICENSE file)
+- Covers the text detection functionality
 
 ### ClearText Additional Features
 - Licensed under ClearText License (see CLEARTEXT_LICENSE file)
