@@ -15,7 +15,7 @@ ClearText is an AI-powered text detection and enhancement tool that helps make t
 ## 💬 Join Our Community!
 <div align="center">
   <a href="https://join.slack.com/t/ocr-community/shared_invite/zt-34ju1b69d-wFBGkxaEioC8APOZjUue2A">
-    <img src="https://img.shields.io/badge/Join-Slack_Community-4A154B?style=for-the-badge&logo=slack" alt="Join Slack">
+  <img src="https://img.shields.io/badge/Join-Slack_Community-4A154B?style=for-the-badge&logo=slack" alt="Join Slack">
   </a>
 </div>
 
