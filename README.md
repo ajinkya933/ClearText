@@ -12,6 +12,15 @@ ClearText is an AI-powered text detection and enhancement tool that helps make t
   </a>
 </div>
 
+## 💬 Join Our Community!
+<div align="center">
+  <a href="https://join.slack.com/t/ocr-community/shared_invite/zt-34ju1b69d-wFBGkxaEioC8APOZjUue2A">
+    <img src="https://img.shields.io/badge/Join-Slack_Community-4A154B?style=for-the-badge&logo=slack" alt="Join Slack">
+  </a>
+</div>
+
+Connect with fellow ClearText users, share your experiences, get support, and stay updated with the latest developments in our growing Slack community!
+
 ## Windows Download:
 Here https://github.com/ajinkya933/ClearText/releases/download/v2.0.0/clear-text-electron.Setup.2.0.0.exe
 
@@ -115,7 +124,7 @@ Here's an example of what ClearText can do:
 👉 [My GitHub Sponsors link](https://github.com/sponsors/ajinkya933)
 
 
-### 🌟 Sponsor Benefits
+### �� Sponsor Benefits
 - 🛠️ Direct assistance with project-related issues and customizations
 - 💡 Technical consultation for your specific use cases
 - 🚀 Early access to new features and improvements
