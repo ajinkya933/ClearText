@@ -210,15 +210,15 @@ def multi_page_processing():
         # Padding sliders in columns
         col1, col2 = st.columns(2)
         with col1:
-            left_offset = st.slider("Left Padding", 0, 80, 0, 
-                                  help="Adds extra space to the left of detected text (in pixels)",
+            left_offset = st.slider("Left Padding", 0, 160, 80, 
+                                  help="Adds extra space to the left of detected text (in pixels). Default is 80; slide up to 160.",
                                   key="multi_left_offset")
             left_offset_manual = st.number_input("Manual Left Padding", 0, 1000, 0,
                                                help="Enter a custom value for left padding (0-1000 pixels)",
                                                key="multi_left_offset_manual")
         with col2:
-            right_offset = st.slider("Right Padding", 0, 80, 0, 
-                                   help="Adds extra space to the right of detected text (in pixels)",
+            right_offset = st.slider("Right Padding", 0, 160, 80, 
+                                   help="Adds extra space to the right of detected text (in pixels). Default is 80; slide up to 160.",
                                    key="multi_right_offset")
             right_offset_manual = st.number_input("Manual Right Padding", 0, 1000, 0,
                                                 help="Enter a custom value for right padding (0-1000 pixels)",
